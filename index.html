@@ -958,10 +958,14 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Forged Men. All rights reserved.</p>
-            <p style="margin-top: 10px;">
-                <a href="mailto:hello@forgedmen.app">hello@forgedmen.app</a>
+            <p style="margin-bottom: 12px;">
+                <a href="/privacy.html">Privacy Policy</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="/terms.html">Terms of Service</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="/contact.html">Contact</a>
             </p>
+            <p>&copy; 2026 Forged. All rights reserved.</p>
         </div>
     </footer>
 
@@ -986,13 +990,4 @@
                 form.style.display = 'none';
                 form.previousElementSibling.style.display = 'none'; // Hide subtitle
                 form.closest('.cta-box').querySelector('h3').style.display = 'none';
-                form.nextElementSibling.style.display = 'none'; // Hide form note
-                success.classList.add('show');
-            });
-        }
-        
-        handleFormSubmit('hero-form', 'hero-success');
-        handleFormSubmit('final-form', 'final-success');
-    </script>
-</body>
-</html>
+                form.nextElementSibling.style.display = 'none';
