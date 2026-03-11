@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Forged</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      flex: 1;
+    }
+    
+    .logo {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .logo a {
+      font-size: 2rem;
+      color: #e85a2c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    h1 {
+      color: #ffffff;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    
+    .subtitle {
+      color: #888;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    label {
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      display: block;
+    }
+    
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 16px;
+      background-color: #252525;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #e85a2c;
+    }
+    
+    input::placeholder, textarea::placeholder {
+      color: #666;
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    select {
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+    }
+    
+    select option {
+      background-color: #252525;
+      color: #ffffff;
+    }
+    
+    button {
+      background-color: #e85a2c;
+      color: #ffffff;
+      border: none;
+      padding: 16px 24px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      margin-top: 10px;
+    }
+    
+    button:hover {
+      background-color: #d14d22;
+    }
+    
+    button:active {
+      transform: scale(0.98);
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #333;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .footer a {
+      color: #e85a2c;
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Success message styling */
+    .success-message {
+      background-color: #1e3a1e;
+      border: 1px solid #4CAF50;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      display: none;
+    }
+    
+    .success-message.show {
+      display: block;
+    }
+    
+    .success-message h2 {
+      color: #4CAF50;
+      margin-bottom: 8px;
+    }
+    
+    .success-message p {
+      color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <a href="/">⚒️ FORGED</a>
+    </div>
+    
+    <h1>Contact Us</h1>
+    <p class="subtitle">Questions, feedback, or need support? We'd love to hear from you.</p>
+    
+    <div class="success-message" id="successMessage">
+      <h2>Message Sent!</h2>
+      <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+    </div>
+    
+    <!-- 
+      SETUP INSTRUCTIONS:
+      1. Go to https://formspree.io and create a free account
+      2. Create a new form and get your form ID
+      3. Replace YOUR_FORM_ID below with your actual Formspree form ID
+         Example: https://formspree.io/f/xyzabcde
+    -->
+    <form action="https://formspree.io/f/mwvrlgqj" method="POST" id="contactForm">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+      
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      </div>
+      
+      <div>
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic" required>
+          <option value="" disabled selected>Select a topic</option>
+          <option value="general">General Question</option>
+          <option value="support">App Support</option>
+          <option value="billing">Billing & Subscription</option>
+          <option value="feedback">Feedback</option>
+          <option value="bug">Report a Bug</option>
+          <option value="partnership">Partnership Inquiry</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+      </div>
+      
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  
+  <div class="footer">
+    <p>
+      <a href="/">Home</a>
+      &nbsp;|&nbsp;
+      <a href="/privacy.html">Privacy Policy</a>
+      &nbsp;|&nbsp;
+      <a href="/terms.html">Terms of Service</a>
+    </p>
+    <p style="margin-top: 12px;">© 2026 Forged. All rights reserved.</p>
+  </div>
+
+  <script>
+    // Show success message if redirected back with success parameter
+    if (window.location.search.includes('success=true')) {
+      document.getElementById('successMessage').classList.add('show');
+      document.getElementById('contactForm').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
